@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+body {
+    background:url(./bg2.jpg);
+    min-height: 100vh;
+
+}
+
+
+h1 {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 2.5rem;
+    text-shadow: 0 0 0 black ;
+    color: rgb(140,60,30);
+     font-family: "Oswald", sans-serif;
+}
+main {
+    height: 500px;
+    background: rgba(245, 222, 179, 0.747);
+    margin: 0 auto;
+    border: 2px solid rgb(140,60,30);
+    border-radius: 20px;
+    box-shadow: 0 0 0 black;
+    padding: 15px;
+}
+
+h3 {
+    margin: 0;
+}
+.flexbox, .grid, .absolute {
+    border: 2px solid skyblue;
+    border-radius: 20px;
+    padding: 10px;
+    min-height: 150px;
+}
+
+.flexbox ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+.flexbox li {
+    list-style: none;
+    height:160px;
+    width: 160px;
+    margin: 10px;
+    background:skyblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flexbox li:hover{
+    background: red;
+    cursor: pointer;
+    color:white;
+    transition: 0.2s;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+.grid img {
+    width: 80%;
+    margin: 0 auto;
+    display: block;
+}
+form{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: 
+    "i1 i1"
+    "ta ta"
+    "vi bt";
+}
+textarea,input{
+    margin: 5px;
+    border: 1px solid;
+    padding: 10px;
+    font-size: 1.2rem;
+    font-family: "DMSerif";
+    border-radius:10px;
+}
+textarea{
+    grid-area: ta;
+    height: 35px;
+    resize: none;
+}
+#btn{
+    grid-area: bt;
+    cursor: pointer;
+    background: skyblue;
+    transition: 0.2s;
+    
+}
+#btn:hover{
+    background: red;
+    color: white;
+}
+/* ABSOLUTE */
+.absolute{
+    position: relative;
+}
+#circle1{
+    width: 60px;
+    height: 50px;
+    background: skyblue;
+    position: absolute;
+    border-radius: 150px;
+    top: 0;
+    right: 0;
+}
+#circle2{
+    width: 40px;
+    height: 30px;
+    background: teal;
+    border-radius: 150px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* RESPONSIVE */
+@media screen and (max-width:875px ){
+    .grid-container{
+        display: block;
+    }
+    .grid-container img {
+        width: 40%;
+
+    }
+}
+@media screen and (max-width:630px ){
+    form{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "i1"
+        "i2"
+        "ta"
+        "bt";
+        
+    }
+
+}
